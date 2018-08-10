@@ -19,5 +19,9 @@ export class ProductsComponent {
     this.products.push(this.productName);
 
   }
+  onRemoveProduct(productName: string) {
+    this.products = this.products.filter(p => p !== productName);
+
+  }
 }
 
