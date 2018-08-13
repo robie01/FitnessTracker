@@ -17,7 +17,7 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {
-  MatButtonModule, MatDatepicker, MatDatepickerModule, MatDatepickerToggle, MatFormFieldModule,
+  MatButtonModule, MatCheckboxModule, MatDatepicker, MatDatepickerModule, MatDatepickerToggle, MatFormFieldModule,
   MatInputModule, MatNativeDateModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -54,7 +54,8 @@ const routes: Routes = [
     MatButtonModule,
     FormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCheckboxModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
