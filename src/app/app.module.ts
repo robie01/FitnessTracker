@@ -16,7 +16,7 @@ import { NewTrainingComponent } from './training/new-training/new-training.compo
 import { CurrentTrainingComponent } from './training/current-training/current-training.component';
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -47,7 +47,9 @@ const routes: Routes = [
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatButtonModule,
+    FormsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
