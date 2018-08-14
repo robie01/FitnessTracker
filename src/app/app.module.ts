@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {ProductsComponent} from './products.component';
 import { ProductComponent } from './product/product.component';
 import {RouterModule, Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProductsService} from './products.service';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -52,10 +52,10 @@ const routes: Routes = [
     MatInputModule,
     FlexLayoutModule,
     MatButtonModule,
-    FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
