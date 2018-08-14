@@ -1,4 +1,25 @@
-<!--<h1>My Cool App</h1>-->
-<!--<a routerLink="/">Home</a>-->
-<!--<a routerLink="/products">Products</a>-->
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+<mat-sidenav #sidenav role="navigation">
+<p>hello</p>
+</mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>LOGO</div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+          <li><a routerLink="/signUp">Signup</a> </li>
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/training">Training</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <!--This basically means that all pages in this app will have sidenav component -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
