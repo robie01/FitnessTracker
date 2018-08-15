@@ -18,17 +18,18 @@ import { PastTrainingsComponent } from './training/past-trainings/past-trainings
 import { WelcomeComponent } from './welcome/welcome.component';
 import {
   MatButtonModule,
+  MatCardModule,
   MatCheckboxModule,
   MatDatepickerModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatNativeDateModule,
+  MatNativeDateModule, MatSelectModule,
   MatSidenavModule,
   MatTabsModule,
   MatToolbarModule
-} from '@angular/material';
+} from "@angular/material";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -74,7 +75,10 @@ const routes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule
+
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
