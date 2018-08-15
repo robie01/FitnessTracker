@@ -21,19 +21,23 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatDatepickerModule,
+  MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatNativeDateModule, MatProgressSpinnerModule, MatSelectModule,
+  MatNativeDateModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
   MatSidenavModule,
   MatTabsModule,
   MatToolbarModule
-} from "@angular/material";
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { StopTrainingComponent } from './training/stop-training/stop-training.component';
 
 const routes: Routes = [
   {path: 'product', component: ProductComponent}
@@ -54,8 +58,7 @@ const routes: Routes = [
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
-
-
+    StopTrainingComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,10 +81,12 @@ const routes: Routes = [
     MatTabsModule,
     MatCardModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
 
   ],
   providers: [ProductsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }
