@@ -82,7 +82,8 @@ const routes: Routes = [
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+
 
   ],
   providers: [ProductsService],

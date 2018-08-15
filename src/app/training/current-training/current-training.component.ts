@@ -21,9 +21,21 @@ export class CurrentTrainingComponent implements OnInit {
       }
     }, 1000);
   }
+
+  /**
+   * Stops the timer.
+   * Open a dialog that shows the content of Stop-training-component and pass data.
+   * dialogRef to get the reference of the open dialog and subscribe to the result.
+   */
   onStop() {
     clearInterval(this.timer);
-    this.dialog.open(StopTrainingComponent);
+    const dialogRef = this.dialog.open(StopTrainingComponent, {data: {
+      progress: this.progress
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    })
   }
 
 }
