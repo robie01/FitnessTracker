@@ -25,7 +25,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatNativeDateModule, MatSelectModule,
+  MatNativeDateModule, MatProgressSpinnerModule, MatSelectModule,
   MatSidenavModule,
   MatTabsModule,
   MatToolbarModule
@@ -77,7 +77,8 @@ const routes: Routes = [
     MatListModule,
     MatTabsModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [ProductsService],
