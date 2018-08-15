@@ -26,6 +26,7 @@ import {
   MatListModule,
   MatNativeDateModule,
   MatSidenavModule,
+  MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -53,6 +54,7 @@ const routes: Routes = [
     HeaderComponent,
     SidenavListComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
