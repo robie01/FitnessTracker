@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {AuthData} from "../auth-data-model";
+import {AuthService} from "../auth-service";
 
 @Component({
   selector: 'app-sign-up',
@@ -9,7 +11,7 @@ import {NgForm} from '@angular/forms';
 export class SignUpComponent implements OnInit {
   maxDate;
 
-  constructor() { }
+  constructor( private authService: AuthService) { }
 
   ngOnInit() {
     this.maxDate = new Date();
@@ -17,7 +19,10 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.authService.registerUser({
+      email: form.value.email,
+      password: form.value.password
+    });
   }
 
 }
