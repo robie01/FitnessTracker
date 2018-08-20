@@ -4,7 +4,7 @@ import {Subject} from 'rxjs/Subject';
 export class TrainingService {
   // it will store the exercise which user selected
   private runningExercise: Exercise;
-  private exercises: Exercise[];
+  private exercises: Exercise[] = [];
   exerciseChanged = new Subject<Exercise>();
 
  private availableExercise: Exercise[] = [
