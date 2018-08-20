@@ -4,6 +4,7 @@ import {Subject} from 'rxjs/Subject';
 export class TrainingService {
   // it will store the exercise which user selected
   private runningExercise: Exercise;
+  private exercises: Exercise[];
   exerciseChanged = new Subject<Exercise>();
 
  private availableExercise: Exercise[] = [
@@ -22,8 +23,33 @@ export class TrainingService {
     ex => ex.id === selectedId);
    this.exerciseChanged.next({...this.runningExercise});
  }
+ // getting an exact copy and making sure it cant mutate outside the service
  getRunningExercise() {
    return {...this.runningExercise};
+ }
+
+ // complete the whole duration.
+ completeExercise() {
+   this.exercises.push({
+     ...this.runningExercise,
+     date: new Date(),
+     state: 'completed'
+   });
+  this.runningExercise = null;
+  this.exerciseChanged.next(null);
+ }
+
+ // cancelling the exercise.
+ cancelExercise(progress: number) {
+   this.exercises.push({
+     ...this.runningExercise,
+     duration:  this.runningExercise.duration * (progress / 100),
+     calories: this.runningExercise.duration * (progress / 100),
+     date: new Date(),
+     state: 'cancelled'
+   });
+   this.runningExercise = null;
+   this.exerciseChanged.next(null);
  }
 
 }
