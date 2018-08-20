@@ -1,3 +1,31 @@
-<p>
-  past-trainings works!
-</p>
+<cdk-table [dataSource]="dataSource">
+  <ng-container cdkColumnDef="date">
+    <th cdk-header-cell *cdkHeaderCellDef>Date</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.date|date}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="name">
+    <th cdk-header-cell *cdkHeaderCellDef>Name</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.name}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="calories">
+    <th cdk-header-cell *cdkHeaderCellDef>Calories </th>
+    <td cdk-cell *cdkCellDef="let element">{{element.calories}}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="duration">
+    <th cdk-header-cell *cdkHeaderCellDef>Duration</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.duration}}</td>
+  </ng-container>
+
+
+  <ng-container cdkColumnDef="state">
+    <th cdk-header-cell *cdkHeaderCellDef>State</th>
+    <td cdk-cell *cdkCellDef="let element">{{element.state}}</td>
+  </ng-container>
+
+
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</cdk-table>

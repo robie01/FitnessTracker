@@ -30,6 +30,7 @@ import {
   MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
+  MatTableModule,
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
@@ -41,6 +42,7 @@ import { StopTrainingComponent } from './training/stop-training/stop-training.co
 import {AuthService} from './auth/auth-service';
 import {TrainingService} from './training/training.service';
 import {AuthGuard} from './auth/auth.guard';
+import {CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -81,10 +83,11 @@ import {AuthGuard} from './auth/auth.guard';
     MatSelectModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    CdkTableModule
 
 
   ],
-  providers: [ProductsService, AuthService, TrainingService, AuthGuard],
+  providers: [ProductsService, AuthService, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
