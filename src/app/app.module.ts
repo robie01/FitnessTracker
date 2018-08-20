@@ -40,10 +40,6 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { StopTrainingComponent } from './training/stop-training/stop-training.component';
 import {AuthService} from './auth/auth-service';
 
-const routes: Routes = [
-  {path: 'product', component: ProductComponent}
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +60,6 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
     FormsModule,
     AppRoutingModule,
     MatFormFieldModule,
