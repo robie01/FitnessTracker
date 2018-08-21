@@ -43,6 +43,9 @@ import {AuthService} from './auth/auth-service';
 import {TrainingService} from './training/training.service';
 import {AuthGuard} from './auth/auth.guard';
 import {CdkTableModule} from '@angular/cdk/table';
+import {AngularFireModule} from 'angularfire2';
+import {environment} from '../environments/environment';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -83,7 +86,9 @@ import {CdkTableModule} from '@angular/cdk/table';
     MatSelectModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    CdkTableModule
+    CdkTableModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
 
 
   ],

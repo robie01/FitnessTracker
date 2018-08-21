@@ -10,7 +10,7 @@ export class TrainingService {
  private availableExercise: Exercise[] = [
     {id: 'crunches', name: 'Crunches', duration: 30, calories: 8},
     {id: 'touch-toes', name: 'Touch Toes', duration: 130, calories: 15},
-    {id: 'side-lungs', name: 'Side-lungs', duration: 80, calories: 7},
+    {id: 'side-lungs', name: 'Side-lungs', duration: 80, calories: 7}
   ];
 
  getAvailableExercises() {
