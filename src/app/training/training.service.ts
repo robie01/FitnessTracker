@@ -1,20 +1,37 @@
 import {Exercise} from './exercise.model';
 import {Subject} from 'rxjs/Subject';
+import {Injectable} from '@angular/core';
+import {AngularFirestore} from 'angularfire2/firestore';
 
+@Injectable()
 export class TrainingService {
   // it will store the exercise which user selected
   private runningExercise: Exercise;
   private exercises: Exercise[] = [];
   exerciseChanged = new Subject<Exercise>();
 
- private availableExercise: Exercise[] = [
-    {id: 'crunches', name: 'Crunches', duration: 30, calories: 8},
-    {id: 'touch-toes', name: 'Touch Toes', duration: 130, calories: 15},
-    {id: 'side-lungs', name: 'Side-lungs', duration: 80, calories: 7}
-  ];
+  private availableExercise: Exercise[] = [];
+  // event emitter
+  exercisesChanged = new Subject<Exercise[]>();
 
- getAvailableExercises() {
-   return this.availableExercise.slice();
+  constructor(private db: AngularFirestore) {
+  }
+
+ fetchAvailableExercises() {
+   this.db.collection('availableExercises')
+     .snapshotChanges().map(docDataArray => {
+     return docDataArray.map(doc => {
+       return {
+         id: doc.payload.doc.id,
+         name: doc.payload.doc.data().name,
+         duration: doc.payload.doc.data().duration,
+         calories: doc.payload.doc.data().calories
+       };
+     });
+   }).subscribe((exercises: Exercise[]) => {
+     this.availableExercise = exercises;
+     this.exercisesChanged.next([...this.availableExercise]);
+   });
  }
 
  // the selected is equal to the available exercise.

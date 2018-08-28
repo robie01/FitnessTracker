@@ -92,7 +92,7 @@ import { AngularFirestoreModule} from 'angularfire2/firestore';
 
 
   ],
-  providers: [ProductsService, AuthService, TrainingService],
+  providers: [ProductsService, AuthService, TrainingService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
