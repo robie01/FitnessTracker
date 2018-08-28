@@ -28,7 +28,9 @@ export class TrainingService {
          calories: doc.payload.doc.data().calories
        };
      });
+       // populating the available exercises
    }).subscribe((exercises: Exercise[]) => {
+     console.log(this.exercises);
      this.availableExercise = exercises;
      this.exercisesChanged.next([...this.availableExercise]);
    });

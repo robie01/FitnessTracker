@@ -1,4 +1,4 @@
-<cdk-table [dataSource]="dataSource" matSort>
+<table cdk-table id="table" [dataSource]="dataSource" matSort>
   <ng-container cdkColumnDef="date">
     <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Date</th>
     <td cdk-cell *cdkCellDef="let element">{{element.date|date}}</td>
@@ -21,11 +21,11 @@
 
 
   <ng-container cdkColumnDef="state">
-    <th cdk-header-cell *cdkHeaderCellDef>State</th>
+    <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>State</th>
     <td cdk-cell *cdkCellDef="let element">{{element.state}}</td>
   </ng-container>
 
 
   <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
   <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
-</cdk-table>
+</table>

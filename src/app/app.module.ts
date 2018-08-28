@@ -30,7 +30,7 @@ import {
   MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
-  MatTableModule,
+  MatSortModule,
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
@@ -88,7 +88,9 @@ import { AngularFirestoreModule} from 'angularfire2/firestore';
     MatDialogModule,
     CdkTableModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatSortModule
+
 
 
   ],
