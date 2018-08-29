@@ -1,31 +1,41 @@
-<table cdk-table id="table" [dataSource]="dataSource" matSort>
-  <ng-container cdkColumnDef="date">
-    <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Date</th>
-    <td cdk-cell *cdkCellDef="let element">{{element.date|date}}</td>
-  </ng-container>
+<div fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" placeholder="Search" (keyup)="doFilter($event.target.value)">
+  </mat-form-field>
+</div>
+<div>
+  <table cdk-table [dataSource]="dataSource" matSort bgcolor="#d3d3d3">
+    <ng-container cdkColumnDef="date">
+      <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Date</th>
+      <td cdk-cell *cdkCellDef="let element">{{element.date|date}}</td>
+    </ng-container>
 
-  <ng-container cdkColumnDef="name">
-    <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Name</th>
-    <td cdk-cell *cdkCellDef="let element">{{element.name}}</td>
-  </ng-container>
+    <ng-container cdkColumnDef="name">
+      <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Name</th>
+      <td cdk-cell *cdkCellDef="let element">{{element.name}}</td>
+    </ng-container>
 
-  <ng-container cdkColumnDef="calories">
-    <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Calories </th>
-    <td cdk-cell *cdkCellDef="let element">{{element.calories}}</td>
-  </ng-container>
+    <ng-container cdkColumnDef="calories">
+      <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Calories</th>
+      <td cdk-cell *cdkCellDef="let element">{{element.calories}}</td>
+    </ng-container>
 
-  <ng-container cdkColumnDef="duration">
-    <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Duration</th>
-    <td cdk-cell *cdkCellDef="let element">{{element.duration}}</td>
-  </ng-container>
-
-
-  <ng-container cdkColumnDef="state">
-    <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>State</th>
-    <td cdk-cell *cdkCellDef="let element">{{element.state}}</td>
-  </ng-container>
+    <ng-container cdkColumnDef="duration">
+      <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Duration</th>
+      <td cdk-cell *cdkCellDef="let element">{{element.duration}}</td>
+    </ng-container>
 
 
-  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
-  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <ng-container cdkColumnDef="state">
+      <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>State</th>
+      <td cdk-cell *cdkCellDef="let element">{{element.state}}</td>
+    </ng-container>
+
+
+    <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+</div>

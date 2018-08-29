@@ -27,6 +27,7 @@ import {
   MatInputModule,
   MatListModule,
   MatNativeDateModule,
+  MatPaginatorModule,
   MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
@@ -89,7 +90,8 @@ import { AngularFirestoreModule} from 'angularfire2/firestore';
     CdkTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
 
 
 
