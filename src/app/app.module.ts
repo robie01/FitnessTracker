@@ -47,6 +47,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -91,10 +92,8 @@ import { AngularFirestoreModule} from 'angularfire2/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatSortModule,
-    MatPaginatorModule
-
-
-
+    MatPaginatorModule,
+    AngularFireAuthModule
   ],
   providers: [ProductsService, AuthService, TrainingService, AuthGuard],
   bootstrap: [AppComponent],
