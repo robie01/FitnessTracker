@@ -7,7 +7,7 @@
   <table cdk-table [dataSource]="dataSource" matSort bgcolor="#d3d3d3">
     <ng-container cdkColumnDef="date">
       <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>Date</th>
-      <td cdk-cell *cdkCellDef="let element">{{element.date|date}}</td>
+      <td cdk-cell *cdkCellDef="let element">{{element.date.toDate()| date}}</td>
     </ng-container>
 
     <ng-container cdkColumnDef="name">
