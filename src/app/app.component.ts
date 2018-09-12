@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import {ProductComponent} from './product/product.component';
-import {Routes} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from './auth/auth-service';
 
 
 @Component({
@@ -8,6 +7,14 @@ import {Routes} from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Fitness-tracker';
+
+  constructor(private authService: AuthService) {
+
+  }
+
+  ngOnInit() {
+    this.authService.initAuthListener();
+  }
 }

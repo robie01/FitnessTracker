@@ -31,6 +31,7 @@ import {
   MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
+  MatSnackBarModule,
   MatSortModule,
   MatTabsModule,
   MatToolbarModule
@@ -93,7 +94,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
     AngularFirestoreModule,
     MatSortModule,
     MatPaginatorModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatSnackBarModule
   ],
   providers: [ProductsService, AuthService, TrainingService, AuthGuard],
   bootstrap: [AppComponent],

@@ -8,7 +8,7 @@ import {MAT_DIALOG_DATA} from "@angular/material";
 })
 export class StopTrainingComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) private passedData: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public passedData: any) { }
 
   ngOnInit() {
   }
