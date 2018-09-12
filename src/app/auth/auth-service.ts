@@ -36,6 +36,7 @@ export class AuthService {
     });
   }
 
+  // creating user/ sign up
   registerUser(authData: AuthData) {
     this.uiService.loadingStateChanged.next(true);
     this.afAuth.auth.createUserWithEmailAndPassword(authData.email, authData.password)
@@ -50,7 +51,6 @@ export class AuthService {
         console.log(error);
     });
   }
-
   login(authData: AuthData) {
     this.uiService.loadingStateChanged.next(true);
    this.afAuth.auth.signInWithEmailAndPassword(authData.email, authData.password)
